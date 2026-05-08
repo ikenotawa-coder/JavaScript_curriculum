@@ -44,8 +44,8 @@
               <span class="material-icons">build</span>
               コード補完
             </button>
-            <button class="c-tab js-tab-btn u-ml-8" data-tab="task" disabled>
-              <span class="material-icons">block</span>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task">
+              <span class="material-icons">edit</span>
               提出課題
             </button>
           </div>
@@ -94,25 +94,26 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const score = 80;<br />
-                    console.log(score !== 100);
+                    const agreed = true;<br />
+                    const declined = false;<br />
+                    console.log(agreed === declined);
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item">
                       <input type="radio" name="q1_2" value="a" />
-                      80
-                    </label>
-                    <label class="p-choice__item">
-                      <input type="radio" name="q1_2" value="b" />
-                      エラー
-                    </label>
-                    <label class="p-choice__item">
-                      <input type="radio" name="q1_2" value="c" />
                       true
                     </label>
                     <label class="p-choice__item">
-                      <input type="radio" name="q1_2" value="d" />
+                      <input type="radio" name="q1_2" value="b" />
                       false
+                    </label>
+                    <label class="p-choice__item">
+                      <input type="radio" name="q1_2" value="c" />
+                      null
+                    </label>
+                    <label class="p-choice__item">
+                      <input type="radio" name="q1_2" value="d" />
+                      エラー
                     </label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--12">
@@ -120,8 +121,8 @@
                     <span class="js-quiz-correct--12 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--12 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「true」です。<br />
-                      80 !== 100 は「80は100と等しくない」という条件で、これはtrueになります。
+                      正解は「false」です。<br />
+                      agreedはtrue、declinedはfalseで値が異なるため、===の比較結果はfalseになります。
                     </span>
                   </div>
                   <button data-quiz-id="q1_2" data-step-question-id="12" class="c-btn">答えを確認</button>
@@ -137,42 +138,73 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 2つの値が型を含めて完全に一致するかどうかを確認するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: 変数stockが5と等しくないかどうかを確認するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const a = 10;<br />
-                    const b = 10;<br />
-                    console.log(a
+                    const stock = 0;<br />
+                    console.log(stock
                     <label for="blank-111" class="c-label-input">比較演算子</label>
-                    <input type="text" class="c-input js-blank--11-1" id="blank-111" placeholder="①" /> b);
+                    <input type="text" class="c-input js-blank--11-1" id="blank-111" placeholder="①" /> 5);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--11">
                     <span class="js-blank-message--11 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--11 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--11 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①=== です。<br />
-                      ===は型も含めて値が完全に一致するかを確認する厳密等価演算子です。
+                      正解は ①!==（または !=）です。<br />
+                      !==は型も含めて不一致を判定します。!=は型を含まずに判定します。
                     </span>
                   </div>
                   <button data-blank-id="11" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 2つの値が一致しないかどうかを確認するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 変数textが空文字と等しくないかどうかを確認するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const status = "active";<br />
-                    console.log(status <label for="blank-121" class="c-label-input">比較演算子</label><input type="text" class="c-input js-blank--12-1" id="blank-121" placeholder="①" /> "inactive");
+                    const text = "";<br />
+                    console.log(<label for="blank-121" class="c-label-input">論理否定演算子</label><input type="text" class="c-input js-blank--12-1" id="blank-121" placeholder="①" />(text
+                    <label for="blank-122" class="c-label-input">比較演算子</label>
+                    <input type="text" class="c-input js-blank--12-2" id="blank-122" placeholder="②" />
+                    ""));
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--12">
                     <span class="js-blank-message--12 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--12 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--12 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①!== です。<br />
-                      !==は型も含めて値が一致しないかを確認する厳密不等価演算子です。
+                      正解は ①! ②=== です。<br />
+                      !(text === "")でtextが空文字かどうかを判定し、その結果を反転させます。
                     </span>
                   </div>
                   <button data-blank-id="12" class="c-btn">答えを確認</button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S1-1</span>
+                <p class="u-flex-1">
+                  3が2以上かを比較し、その結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S1-2</span>
+                <p class="u-flex-1">
+                  800が1000より小さいか比較し、その結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S1-3</span>
+                <p class="u-flex-1">
+                  "active"と"inactive"の文字列を比較し、同じでないかを判定して結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
               </div>
             </div>
           </div>
@@ -200,8 +232,8 @@
               <span class="material-icons">build</span>
               コード補完
             </button>
-            <button class="c-tab js-tab-btn u-ml-8" data-tab="task2" disabled>
-              <span class="material-icons">block</span>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task2">
+              <span class="material-icons">edit</span>
               提出課題
             </button>
           </div>
@@ -243,8 +275,8 @@
                     <span class="js-quiz-incorrect--21 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は「true」です。<br />
-                      ||（OR）演算子は、左から順に見てtrueとみなされる値を返します。<br />
-                      aはtrueなので、trueが表示されます。
+                      (||)OR演算子は、左から順に見てtrueとみなされる値を返します。<br />
+                      aは文字列ではなく真偽値（boolean型）のtrueなのでtrueが表示されます。
                     </span>
                   </div>
                   <button data-quiz-id="q2_1" data-step-question-id="21" class="c-btn">答えを確認</button>
@@ -344,6 +376,38 @@
               </div>
             </div>
           </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task2">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S2-1</span>
+                <p class="u-flex-1">
+                  在庫あり状態と購入可能状態をtrue / falseで表す変数をそれぞれ用意する。<br />
+                  両方がtrueかどうかを判定し、その結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S2-2</span>
+                <p class="u-flex-1">
+                  セール対象状態と送料無料対象状態をtrue / falseで表す変数をそれぞれ用意する。<br />
+                  どちらか一方でもtrueかどうかを判定し、その結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S2-3</span>
+                <p class="u-flex-1">
+                  在庫切れ状態をtrueで表す変数を用意する。<br />
+                  その値を反転した結果をコンソールに表示する。
+                  <span class="c-tag -point">if文は使用せずに実装してください。</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
         <!-- Step3 -->
         <section class="p-section js-section">
@@ -400,7 +464,7 @@
                     <span class="js-quiz-incorrect--31 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は「なにも表示されない」です。<br />
-                      valueは空文字のためtext!== "" はfalseとなりif文のブロック内は実行されません。
+                      valueは空文字のためvalue !== ""はfalseとなりif文のブロック内は実行されません。
                     </span>
                   </div>
                   <button data-quiz-id="q3_1" data-step-question-id="31" class="c-btn">答えを確認</button>
@@ -465,13 +529,12 @@
                   <button data-blank-id="31" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 変数textValueが空文字でないかを確認するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 変数textValueが空文字でない場合のみ登録処理を行うコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const textValue = "10007";<br />
                     if (textValue <label for="blank-321" class="c-label-input">比較演算子</label>
                     <input type="text" class="c-input js-blank--32-1" id="blank-321" placeholder="①" />
                     "") {<br />
-                    &nbsp;&nbsp;console.log("正常に登録しました。");<br />
+                    &nbsp;&nbsp;alert("登録しました。");<br />
                     }
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--32">
@@ -479,8 +542,8 @@
                     <span class="js-blank-correct--32 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--32 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①!== です。<br />
-                      !==で空文字でないかを確認します。
+                      正解は ①!==（または !=）です。<br />
+                      !==は型も含めて不一致を判定します。!=は型を含まずに判定します。
                     </span>
                   </div>
                   <button data-blank-id="32" class="c-btn">答えを確認</button>
@@ -516,7 +579,11 @@
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S3-2</span>
-                <p class="u-flex-1">'.js-check-s3'のチェック状態がONの場合に'.js-checkResult-s3'要素のテキストを"認証しました。"へ変更する。</p>
+                <p class="u-flex-1">
+                  '.js-check-s3'のチェック状態がONの場合に'.js-checkResult-s3'要素のテキストを"認証しました。"へ変更する。<br />
+                  また、チェック状態がOFFの場合に、'.js-checkResult-s3'要素のテキストを"未承認です。"へ変更する。
+                  <span class="c-tag -point">else文は使用せずに実装してください。</span>
+                </p>
               </div>
             </div>
           </div>
@@ -559,8 +626,8 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const isActive = false;<br />
-                    if (isActive) {<br />
+                    const is-active = false;<br />
+                    if (is-active) {<br />
                     &nbsp;&nbsp;console.log("有効");<br />
                     } else {<br />
                     &nbsp;&nbsp;console.log("無効");<br />
@@ -691,7 +758,7 @@
                   <button type="button" class="c-button-practice -min-w100 js-loginBtn-s4" disabled>ログイン</button>
                   <button type="button" class="c-button-practice -min-w100 u-ml-8 js-logoutBtn-s4">ログアウト</button>
                 </div>
-                <div class="p-practice__item -column">
+                <div class="p-practice__item">
                   <button type="button" class="c-button-practice js-statusBtn-s4">ステータス確認</button>
                   <div class="p-practice__card">
                     <p class="js-statusText-s4">会員</p>
@@ -702,8 +769,10 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S4-1</span>
-                <p class="u-flex-1">'.js-area-s4'をクリックしたとき、押したボタンが'.js-loginBtn-s4'であれば'.js-loginBtn-s4'にdisabledを付与し<br />
-                  '.js-logoutBtn-s4'のdisabledを外す。そうでなければ逆にする。</p>
+                <p class="u-flex-1">
+                  '.js-area-s4'をクリックしたとき、押したボタンが'.js-loginBtn-s4'であれば'.js-loginBtn-s4'にdisabledを付与し<br />
+                  '.js-logoutBtn-s4'のdisabledを外す。そうでなければ逆にする。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S4-2</span>
@@ -835,8 +904,8 @@
                     <span class="js-blank-correct--51 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--51 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①=== です。<br />
-                      厳密等価演算子（===）で文字列を比較します。
+                      正解は ①===（または ==）です。<br />
+                      ===は型も含めて一致を判定します。==は型を含まずに判定します。
                     </span>
                   </div>
                   <button data-blank-id="51" class="c-btn">答えを確認</button>
@@ -845,7 +914,6 @@
                   <h4 class="c-title-question">Q2: 18未満・65未満の条件式の空欄を埋めてください。</h4>
                   <div class="c-code -blank">
                     const age = 70;<br />
-                    <br />
                     if (age <label for="blank-521" class="c-label-input">比較演算子</label>
                     <input type="text" class="c-input js-blank--52-1" id="blank-521" placeholder="①" />
                     18) {<br />
@@ -881,15 +949,14 @@
               <h2 class="c-title-lesson">選択肢の値によって処理を分け、条件に応じて表示を切り替える練習</h2>
               <div class="p-practice__inner">
                 <div class="p-practice__card">
-                  <select class="c-input js-colorSelect-s5">
+                  <select class="c-input js-size-s5">
                     <option value="Sサイズ">Sサイズ</option>
                     <option value="Mサイズ">Mサイズ</option>
                     <option value="Lサイズ">Lサイズ</option>
                   </select>
                 </div>
-                <div class="p-practice__card js-alert-s5 is-red">
-                  <p>カート</p>
-                  <p class="js-optionCount-s5"></p>
+                <div class="p-practice__card js-cart-s5 is-red">
+                  <p class="js-option-s5">在庫わずか</p>
                 </div>
               </div>
             </div>
@@ -897,16 +964,17 @@
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S5-1</span>
                 <p class="u-flex-1">
-                  '.js-colorSelect-s5'の値が変わったとき、'.js-alert-s5'のクラスを切り替える。<br />
+                  '.js-size-s5'の値が変わったとき、'.js-cart-s5'のクラスを切り替える。<br />
                   "Sサイズ"なら'is-red'、"Mサイズ"なら'is-blue'、それ以外なら'is-green'を付与する。<br />
-                  付与する前に他のクラスを取り除くこと。</span
-                >
+                  付与する前に他のクラスを取り除くこと。
+                  <span class="c-tag -point">classList.remove()で特定のクラスを削除します。複数指定可能。</span>
+                </p>
               </div>
               <div class="p-task__item">
-                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S5-2</p>
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S5-2</span>
                 <p class="u-flex-1">
-                  '.js-colorSelect-s5'の選択肢の数が1サイズなら'.js-optionCount-s5'に"Sを選択"と表示する。<br />
-                  2サイズなら"S・Mを選択"、3サイズなら"S・M・Lを選択"と表示する。
+                  '.js-size-s5'で選択されている値が"Sサイズ"なら '.js-option-s5'に"在庫わずか"と表示、<br />
+                  "Mサイズ"なら"人気商品"、"Lサイズ"なら"送料無料対象"と表示する。
                 </p>
               </div>
             </div>
@@ -976,10 +1044,10 @@
                     }
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" /> 表示なし</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="b" /> error</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="c" /> true</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="d" /> 要素なし</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" />表示なし</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="b" />null</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="c" />true</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="d" />要素なし</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--62">
                     <span class="js-quiz-message--62 u-color-message u-hide">選択肢を選んでください。</span>
@@ -987,7 +1055,7 @@
                     <span class="js-quiz-incorrect--62 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は「要素なし」です。<br />
-                      .js-popupは存在しないためnullが返り、!nullはtrueとなります。
+                      .js-popupは存在しないためnullが返り、!nullはtrueとなりコンソールに出力される処理が走ります。
                     </span>
                   </div>
                   <button data-quiz-id="q6_2" data-step-question-id="62" class="c-btn">答えを確認</button>
@@ -1021,7 +1089,8 @@
                     <span class="js-blank-incorrect--61 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は ①! ②btn です。<br />
-                      !演算子でnullを反転させてtrueにし、早期returnします。
+                      要素が取得できない場合はnullになるため、!btnで判定して処理を終了します。<br />
+                      この場合はnullチェックとして使用します。
                     </span>
                   </div>
                   <button data-blank-id="61" class="c-btn">答えを確認</button>
@@ -1048,7 +1117,8 @@
                     <span class="js-blank-incorrect--62 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は ①closest です。<br />
-                      btnの祖先に.js-popupは存在しないためclosestはnullを返し、!nullはtrueとなって早期returnします。
+                      btnの祖先要素に'.js-popup'が存在しない場合、closest()はnullを返します。<br />
+                      nullはfalseとして扱われるため、!popupはtrueになり処理を終了します。
                     </span>
                   </div>
                   <button data-blank-id="62" class="c-btn">答えを確認</button>
@@ -1063,7 +1133,7 @@
             </div>
             <div id="q6" class="p-practice">
               <h2 class="c-title-lesson">ガード条件の練習</h2>
-              <div class="p-practice__inner">
+              <div class="p-practice__inner -align-start">
                 <div>
                   <div class="p-practice__item">
                     <input class="c-input js-input-s6" type="text" placeholder="文字を入力" />
@@ -1083,13 +1153,18 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S6-1</span>
-                <p class="u-flex-1">'.js-submitBtn-s6'要素をクリックしたとき、'.js-input-s6'の値を取得する。<br />
-                  値が空の場合は処理を止め、値がある場合のみ'.js-result-s6'要素のテキストに入力内容を表示する。</p>
+                <p class="u-flex-1">
+                  '.js-submitBtn-s6'要素をクリックしたとき、'.js-input-s6'の値を取得する。<br />
+                  値が空の場合は処理を止め、値がある場合のみ'.js-result-s6'要素のテキストに入力内容を表示する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S6-2</span>
-                <p class="u-flex-1">'.js-checkBtn-s6'をクリックしたとき、'.js-item-s6'要素を取得する。<br />
-                  要素が見つからない場合はコンソールに"要素なし"と表示して処理を止め、要素が見つかった場合は'.js-checkResult-s6'に"要素が見つかりました"と表示する。</p>
+                <p class="u-flex-1">
+                  '.js-checkBtn-s6'をクリックしたとき、'.js-item-s6'要素を取得する。<br />
+                  要素が見つからない場合はコンソールに"要素なし"と表示して処理を止め、<br />
+                  要素が見つかった場合は'.js-checkResult-s6'に"要素が見つかりました"と表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -1102,7 +1177,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step7: switch文</p>
               </h2>
-              <span class="c-useCase">複数の値に応じた処理をまとめて書けて、タブ切替などのUIが実装できるようになります。</span>
+              <span class="c-useCase">複数の値に応じた処理をわかりやすくまとめて実装できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -1123,27 +1198,34 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const color = "red";<br />
-                    <br />
+                    const color = "blue";<br />
                     switch (color) {<br />
                     &nbsp;&nbsp;case "red":<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;console.log("赤");<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;case "blue":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("青");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;case "green":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("緑");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;default:<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("その他");<br />
                     }
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item"><input type="radio" name="q7_1" value="a" /> 赤</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="b" /> red</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="c" /> 表示なし</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="d" /> error</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="b" /> 青</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="c" /> 緑</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="d" /> 表示なし</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--71">
                     <span class="js-quiz-message--71 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--71 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--71 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「赤」です。<br />
-                      colorが"red"なのでcase "red"に一致し、console.log("赤")が実行されます。
+                      正解は「青」です。<br />
+                      colorが"blue"なのでcase "blue"に一致し、console.log("青")が実行されます。
                     </span>
                   </div>
                   <button data-quiz-id="q7_1" data-step-question-id="71" class="c-btn">答えを確認</button>
@@ -1151,27 +1233,34 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const tab = "home";<br />
-                    <br />
-                    switch (tab) {<br />
+                    const page = "about";<br />
+                    switch (page) {<br />
                     &nbsp;&nbsp;case "home":<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;console.log("ホーム");<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;case "about":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("会社概要");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;case "contact":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("お問い合わせ");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;default:<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("不明");<br />
                     }
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="a" /> error</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="b" /> 会社</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="c" /> 表示なし</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="d" /> ホーム</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="a" /> ホーム</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="b" /> 会社概要</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="c" /> お問い合わせ</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="d" /> 表示なし</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--72">
                     <span class="js-quiz-message--72 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--72 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--72 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「ホーム」です。<br />
-                      tabが"home"なのでcase "home"に一致し、console.log("ホーム")が実行されます。
+                      正解は「会社概要」です。<br />
+                      pageが"about"なのでcase "about"に一致し、console.log("会社概要")が実行されます。
                     </span>
                   </div>
                   <button data-quiz-id="q7_2" data-step-question-id="72" class="c-btn">答えを確認</button>
@@ -1189,9 +1278,10 @@
                 <div class="p-blank__item js-blankItem">
                   <h4 class="c-title-question">Q1: switch文で値に応じて処理するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    switch(type) {<br />
-                    &nbsp;&nbsp;<label for="blank-711" class="c-label-input">キーワード</label> <input type="text" class="c-input js-blank--71-1" id="blank-711" placeholder="①" /> "a":<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("A");<br />
+                    const color = "red";<br />
+                    switch(<label for="blank-711" class="c-label-input">変数名</label><input type="text" class="c-input js-blank--71-1" id="blank-711" placeholder="①" />) {<br />
+                    &nbsp;&nbsp;<label for="blank-712" class="c-label-input">キーワード</label> <input type="text" class="c-input js-blank--71-2" id="blank-712" placeholder="②" /> "red":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("赤");<br />
                     &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
                     }
                   </div>
@@ -1200,27 +1290,31 @@
                     <span class="js-blank-correct--71 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--71 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①case です。<br />
-                      switch文では各条件をcaseキーワードで記述します。
+                      正解は ①color ②case です。<br />
+                      switch文は()内の変数の値をcaseと照合します。
                     </span>
                   </div>
                   <button data-blank-id="71" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: クリックした要素から親要素である.js-tabを取得するコードの空欄を埋めてください。</h4>
-                  <div class="c-code -ref u-mb-8">&lt;div class="js-tab"&gt;...&lt;/div&gt;</div>
+                  <h4 class="c-title-question">Q2: switch文にdefault処理を追加するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const target = event.target;<br />
-                    <br />
-                    const tab = target.<label for="blank-721" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--72-1" id="blank-721" placeholder="①" />(".js-tab");
+                    switch (status) {<br />
+                    &nbsp;&nbsp;case "active":<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("有効");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                    &nbsp;&nbsp;<label for="blank-721" class="c-label-input">キーワード</label><input type="text" class="c-input js-blank--72-1" id="blank-721" placeholder="①" />:<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("その他");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<label for="blank-722" class="c-label-input">キーワード</label><input type="text" class="c-input js-blank--72-2" id="blank-722" placeholder="②" />;<br />
+                    }
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--72">
                     <span class="js-blank-message--72 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--72 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--72 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①closest です。<br />
-                      closestは自身から祖先要素に向かってセレクタに一致する要素を検索します。
+                      正解は ①default ②break です。<br />
+                      defaultはどのcaseにも一致しない場合の処理で、breakで処理を抜けます。
                     </span>
                   </div>
                   <button data-blank-id="72" class="c-btn">答えを確認</button>
@@ -1235,7 +1329,7 @@
             </div>
             <div id="q7" class="p-practice">
               <h2 class="c-title-lesson">switch文の練習</h2>
-              <div class="p-practice__inner">
+              <div class="p-practice__inner -align-start">
                 <div class="p-practice__card">
                   <select class="c-input js-select-s7">
                     <option value="">選択してください</option>
@@ -1245,21 +1339,30 @@
                   </select>
                   <p class="js-display-s7"></p>
                 </div>
-                <div class="js-tabArea-s7" style="display: flex; gap: 8px">
-                  <div class="js-tab-s7" style="padding: 8px 16px; border-radius: 4px; cursor: pointer; background: var(--color-gray-1)">ホーム</div>
-                  <div class="js-tab-s7" style="padding: 8px 16px; border-radius: 4px; cursor: pointer; background: var(--color-gray-1)">アバウト</div>
-                  <div class="js-tab-s7" style="padding: 8px 16px; border-radius: 4px; cursor: pointer; background: var(--color-gray-1)">お問い合わせ</div>
+                <div class="p-practice__card">
+                  <div class="js-tabArea-s7">
+                    <button type="button" class="c-button-practice js-tabBtn-s7" data-page="home">ホーム</button>
+                    <button type="button" class="c-button-practice u-ml-8 js-tabBtn-s7" data-page="about">アバウト</button>
+                    <button type="button" class="c-button-practice u-ml-8 js-tabBtn-s7" data-page="contact">お問い合わせ</button>
+                  </div>
+                  <p class="js-tabResult-s7"></p>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S7-1</span>
-                <p class="u-flex-1">'.js-select-s7'の値が変わったとき、switch文を使って"home"なら'.js-display-s7'に"ホーム"、"about"なら"アバウト"、"contact"なら"お問い合わせ"と表示する。</p>
+                <p class="u-flex-1">
+                  '.js-select-s7'の値が変わったとき、switch文を使って"home"なら'.js-display-s7'に"ホーム"、"about"なら"アバウト"、"contact"なら"お問い合わせ"と表示する。それ以外は空にする。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S7-2</span>
-                <p class="u-flex-1">'.js-tabArea-s7'内の'.js-tab-s7'をクリックしたとき、クリックした要素にのみ'is-active'クラスを付与し、他の要素から'is-active'クラスを削除する。</p>
+                <p class="u-flex-1">
+                  '.js-tabArea-s7'内の'.js-tabBtn-s7'をクリックしたとき、switch文を使って<br />
+                  data-page属性の値が"home"なら'.js-tabResult-s7'に"ホーム"、"about"なら"アバウト"、<br />
+                  "contact"なら"お問い合わせ"、それ以外なら"不明"を表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -1294,7 +1397,6 @@
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
                     const isOn = true;<br />
-                    <br />
                     console.log(isOn ? "ON" : "OFF");
                   </div>
                   <div class="p-choice js-choices">
@@ -1318,7 +1420,6 @@
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
                     const text = "";<br />
-                    <br />
                     console.log(text ? "あり" : "なし");
                   </div>
                   <div class="p-choice js-choices">
@@ -1349,10 +1450,12 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 三項演算子を完成させてください。</h4>
+                  <h4 class="c-title-question">Q1: 三項演算子を使ってクラスを付与するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const result = isLogin <label for="blank-811" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--81-1" id="blank-811" placeholder="①" /> "ログイン"
-                    <label for="blank-812" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--81-2" id="blank-812" placeholder="②" /> "未ログイン";
+                    const isValid = true;<br />
+                    const box = document.querySelector(".js-box");<br />
+                    box.className = isValid <label for="blank-811" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--81-1" id="blank-811" placeholder="①" /> "is-valid"
+                    <label for="blank-812" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--81-2" id="blank-812" placeholder="②" /> "is-invalid";
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--81">
                     <span class="js-blank-message--81 u-color-message u-hide">すべての空欄を埋めてください</span>
@@ -1360,16 +1463,22 @@
                     <span class="js-blank-incorrect--81 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は ①? ②: です。<br />
-                      三項演算子の形式は「条件 ? 真の値 : 偽の値」です。
+                      isValidがtrueなら"is-valid"、falseなら"is-invalid"がclassNameに代入されます。
                     </span>
                   </div>
                   <button data-blank-id="81" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 入力値の有無で表示を切り替える三項演算子を完成させてください。</h4>
+                  <h4 class="c-title-question">Q2: ラジオボタンのチェック状態でボタンのdisabledを切り替える三項演算子を完成させてください。</h4>
+                  <div class="c-code -ref u-mb-8">
+                    &lt;input type="radio" class="js-radio" /&gt;<br />
+                    &lt;button class="js-submitBtn"&gt;送信&lt;/button&gt;
+                  </div>
                   <div class="c-code -blank">
-                    const text = value <label for="blank-821" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--82-1" id="blank-821" placeholder="①" /> "入力あり"
-                    <label for="blank-822" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--82-2" id="blank-822" placeholder="②" /> "空";
+                    const radio = document.querySelector(".js-radio");<br />
+                    const btn = document.querySelector(".js-submitBtn");<br />
+                    btn.disabled = radio.checked <label for="blank-821" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--82-1" id="blank-821" placeholder="①" /> false
+                    <label for="blank-822" class="c-label-input">演算子</label> <input type="text" class="c-input js-blank--82-2" id="blank-822" placeholder="②" /> true;
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--82">
                     <span class="js-blank-message--82 u-color-message u-hide">すべての空欄を埋めてください</span>
@@ -1377,7 +1486,7 @@
                     <span class="js-blank-incorrect--82 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は ①? ②: です。<br />
-                      valueがtruthyなら"入力あり"、falsyなら"空"が代入されます。
+                      ラジオボタンがcheckedならdisabledをfalse（有効）、そうでなければtrue（無効）にします。
                     </span>
                   </div>
                   <button data-blank-id="82" class="c-btn">答えを確認</button>
@@ -1393,26 +1502,28 @@
             <div id="q8" class="p-practice">
               <h2 class="c-title-lesson">三項演算子の練習</h2>
               <div class="p-practice__inner">
-                <div class="js-loginArea-s8" style="border: 2px solid var(--color-primary); padding: 12px; border-radius: 8px">
-                  <button type="button" class="c-button-practice js-loginBtn-s8">ログイン</button>
-                  <button type="button" class="c-button-practice js-logoutBtn-s8" disabled>ログアウト</button>
-                  <p class="js-loginResult-s8"></p>
-                </div>
                 <div class="p-practice__card">
-                  <input class="c-input js-input-s8" type="text" placeholder="文字を入力" />
-                  <button type="button" class="c-button-practice js-checkBtn-s8">確認</button>
-                  <p class="js-result-s8"></p>
+                  <button type="button" class="c-button-practice js-favoriteBtn-s8">いいね</button>
+                  <p class="js-likeStatus-s8"></p>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S8-1</span>
-                <p class="u-flex-1">'.js-loginArea-s8'内の'.js-loginBtn-s8'をクリックしたとき、三項演算子を使って「ログイン中かどうか」を'.js-loginBtn-s8'のdisabled属性で判定する。disabledなら未ログイン中なので'.js-loginResult-s8'に"ログイン中"と表示し、'.js-loginBtn-s8'をdisabledにして'.js-logoutBtn-s8'のdisabledを外す。disabledでなければ逆にして"未ログイン"と表示する。</p>
+                <p class="u-flex-1">
+                  '.js-favoriteBtn-s8'をクリックするたびに、三項演算子を使って"いいね済み"かどうかを判定する。<br />
+                  いいね済みなら'.js-favoriteBtn-s8'のテキストを"いいね解除"に変更する。<br />
+                  そうでなければボタンのテキストを"いいね"に戻す。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S8-2</span>
-                <p class="u-flex-1">'.js-input-s8'に文字が入力されたとき、三項演算子を使って入力があれば'.js-checkBtn-s8'に'is-active'クラスを追加、なければ削除する。'.js-result-s8'に"入力あり"または"空"と表示する。</p>
+                <p class="u-flex-1">
+                  '.js-favoriteBtn-s8'をクリックするたびに、三項演算子を使って"いいね済み"かどうかを判定する。<br />
+                  いいね済みの場合は'.js-likeStatus-s8'に「いいね済み」と表示する。<br />
+                  そうでなければ'.js-likeStatus-s8'に「未いいね」と表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -1514,14 +1625,10 @@
                 <strong>アコーディオン開閉</strong>
                 <div id="q9_4" class="p-practice u-mt-8">
                   <h2 class="c-title-lesson">アコーディオンの練習</h2>
-                  <div class="p-practice__inner" style="flex-direction: column">
-                    <div class="js-accordion-s9" style="border: 1px solid var(--color-gray-3); border-radius: 8px; overflow: hidden; margin-bottom: 8px">
-                      <button type="button" class="c-button-practice js-accordionBtn-s9" style="width: 100%; text-align: left">アコーディオン1 ▼</button>
-                      <div class="js-accordionContent-s9" style="padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s">内容1</div>
-                    </div>
-                    <div class="js-accordion-s9" style="border: 1px solid var(--color-gray-3); border-radius: 8px; overflow: hidden">
-                      <button type="button" class="c-button-practice js-accordionBtn-s9" style="width: 100%; text-align: left">アコーディオン2 ▼</button>
-                      <div class="js-accordionContent-s9" style="padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s">内容2</div>
+                  <div class="p-practice__inner -align-start">
+                    <div class="p-practice__accordion js-accordion-s9">
+                      <button type="button" class="c-button-practice js-accordionBtn-s9">アコーディオン1 ▼</button>
+                      <div class="p-practice__accordionPanel is-open js-accordionContent-s9">内容1</div>
                     </div>
                   </div>
                 </div>
@@ -1538,7 +1645,7 @@
                 <strong>タブ切替UI</strong>
                 <div id="q9_5" class="p-practice u-mt-8">
                   <h2 class="c-title-lesson">タブ切替の練習</h2>
-                  <div class="p-practice__inner" style="flex-direction: column">
+                  <div class="p-practice__inner">
                     <div class="js-tabMenu-s9" style="display: flex; gap: 4px; margin-bottom: 8px">
                       <button class="c-tab js-tabBtn-s9 is-active" data-id="tab1">タブ1</button>
                       <button class="c-tab js-tabBtn-s9" data-id="tab2">タブ2</button>
@@ -1570,5 +1677,6 @@
     <script src="../common/assets/js/config.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/curriculum.js" defer></script>
+    <script src="assets/js/sample.js" defer></script>
   </body>
 </html>

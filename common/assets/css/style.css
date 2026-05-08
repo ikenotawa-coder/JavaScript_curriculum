@@ -817,6 +817,30 @@ JavaScript Curriculum Common StyleCSS
   text-decoration: underline;
 }
 
+.p-practice__accordion {
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.p-practice__accordionPanel {
+  background: var(--color-gray-30);
+  padding: 8px;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+.p-practice__accordionPanel.is-open {
+  padding: 8px;
+  max-height: 100%;
+}
+
+.p-practice__accordionPanel.is-close {
+  padding: 0;
+  max-height: 0;
+}
+
 .p-quiz button,
 .p-blank button,
 .p-task .c-btn {

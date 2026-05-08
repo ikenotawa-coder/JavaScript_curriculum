@@ -10,7 +10,7 @@
  */
 window.QUIZ_ANSWERS = {
   q1_1: "b",
-  q1_2: "c",
+  q1_2: "b",
   q2_1: "a",
   q2_2: "a",
   q3_1: "b",
@@ -21,8 +21,8 @@ window.QUIZ_ANSWERS = {
   q5_2: "b",
   q6_1: "b",
   q6_2: "d",
-  q7_1: "a",
-  q7_2: "d",
+  q7_1: "b",
+  q7_2: "b",
   q8_1: "c",
   q8_2: "b",
 };
@@ -34,12 +34,12 @@ window.QUIZ_ANSWERS = {
 window.BLANK_ANSWERS = {
   11: {
     inputs: [".js-blank--11-1"],
-    answers: ["==="],
-    validation: "default",
+    answers: ["!==", "!="],
+    validation: "multiple_valid",
   },
   12: {
-    inputs: [".js-blank--12-1"],
-    answers: ["!=="],
+    inputs: [".js-blank--12-1", ".js-blank--12-2"],
+    answers: ["!", "==="],
     validation: "default",
   },
   21: {
@@ -59,8 +59,8 @@ window.BLANK_ANSWERS = {
   },
   32: {
     inputs: [".js-blank--32-1"],
-    answers: ["!=="],
-    validation: "default",
+    answers: ["!==", "!="],
+    validation: "multiple_valid",
   },
   41: {
     inputs: [".js-blank--41-1", ".js-blank--41-2"],
@@ -74,8 +74,8 @@ window.BLANK_ANSWERS = {
   },
   51: {
     inputs: [".js-blank--51-1"],
-    answers: ["==="],
-    validation: "default",
+    answers: ["===", "=="],
+    validation: "multiple_valid",
   },
   52: {
     inputs: [".js-blank--52-1", ".js-blank--52-2"],
@@ -93,13 +93,13 @@ window.BLANK_ANSWERS = {
     validation: "default",
   },
   71: {
-    inputs: [".js-blank--71-1"],
-    answers: ["case"],
+    inputs: [".js-blank--71-1", ".js-blank--71-2"],
+    answers: ["color", "case"],
     validation: "default",
   },
   72: {
-    inputs: [".js-blank--72-1"],
-    answers: ["closest"],
+    inputs: [".js-blank--72-1", ".js-blank--72-2"],
+    answers: ["default", "break"],
     validation: "default",
   },
   81: {
