@@ -98,8 +98,8 @@ function L1_S5() {
     const productPrice = 1200;
     const shippingCost = 500;
     const totalCost = productPrice + shippingCost;
-    const tax = totalCost * 1.1;
-    console.log(Math.floor(tax));
+    const totalWithTax = totalCost * 1.1;
+    console.log(Math.floor(totalWithTax)); // 消費税を含む合計金額を整数で表示
 
     // L1-S5-2
     const num = 23;
@@ -223,7 +223,7 @@ function L1_S10_2() {
     const total = japanese + math + english;
     const average = total / 3;
     console.log(
-        `科目別成績: 国語: ${japanese}点, 数学: ${math}点, 英語: ${english}点`,
+        `科目別成績: 国語${japanese}点, 数学${math}点, 英語${english}点`,
     );
     console.log(`合計得点: ${total}点`);
     console.log(`平均得点: ${average.toFixed(1)}点`);
