@@ -42,7 +42,7 @@ getElementsDemo();
 // L2-S2-2:
 // '.js-status-s2'要素を取得し、既存のテキストの末尾に"準備完了"という文字列を追加する。
 // ===================================
-function updateText() {
+function updateHeaderAndStatusText() {
     // L2-S2-1:
     const headerElement = document.querySelector(".js-header-s2");
     headerElement.textContent = "明日の予定";
@@ -53,7 +53,7 @@ function updateText() {
     statusElement.textContent += "準備完了";
     console.log(statusElement);
 }
-updateText();
+updateHeaderAndStatusText();
 
 // ===================================
 // L2-S3-1:
@@ -62,7 +62,7 @@ updateText();
 // L2-S3-2:
 // '.js-cancelBtn-s3'要素を取得し、disabled属性を追加して無効化する。（disabled属性には事前にスタイルを実装済み。）
 // ===================================
-function toggleButtonStates() {
+function changeButtonStates() {
     // L2-S3-1:
     const submitBtnOld = document.querySelector(".js-submitBtn-old-s3");
     submitBtnOld.className = "c-button-practice js-submitBtn-s3";
@@ -73,7 +73,7 @@ function toggleButtonStates() {
     cancelBtn.disabled = true;
     console.log(cancelBtn);
 }
-toggleButtonStates();
+changeButtonStates();
 
 // ===================================
 // L2-S4-1:
@@ -147,7 +147,7 @@ resetEmailAndCheckAgreement();
 // L2-S7-2:
 // '.js-target-s7'要素の、次の兄弟要素のテキストを"ニュース"へ変更する。
 // ===================================
-function logParentAndSiblingText() {
+function logFirstChildAndChangeNextSibling() {
     // L2-S7-1:
     const target = document.querySelector(".js-target-s7");
     const parent = target.parentElement;
@@ -159,7 +159,7 @@ function logParentAndSiblingText() {
     next.textContent = "ニュース";
     console.log(next.textContent);
 }
-logParentAndSiblingText();
+logFirstChildAndChangeNextSibling();
 
 // ===================================
 // L2-S8-1:
