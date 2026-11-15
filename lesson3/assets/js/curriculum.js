@@ -262,7 +262,7 @@ function handleColorChange() {
     const resetBtn = document.querySelector(".js-resetBtn-s9");
 
     // 初期状態の色
-    const defaultColor = "#ffffff";
+    const defaultColor = colorInput.value;
 
     // L3-S9-3-①② : 色が変更されたら背景色とHEXコードを更新する
     colorInput.addEventListener("input", () => {
@@ -273,7 +273,7 @@ function handleColorChange() {
     // L3-S9-3-③④ : リセットで入力欄・背景色・表示をすべて初期状態に戻す
     resetBtn.addEventListener("click", () => {
         colorInput.value = defaultColor;
-        targetBox.style.backgroundColor = defaultColor;
+        targetBox.style.backgroundColor = "";
         currentColor.textContent = defaultColor;
     });
 }
