@@ -385,7 +385,7 @@
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S2-1</span>
                 <p class="u-flex-1">
-                  在庫あり状態と購入可能状態をtrue / falseで表す変数をそれぞれ用意する。<br />
+                  登録済み状態と本人確認済み状態をtrue / falseで表す変数をそれぞれ用意する。<br />
                   両方がtrueかどうかを判定し、その結果をコンソールに表示する。
                   <span class="c-tag -point">if文は使用せずに実装してください。</span>
                 </p>
@@ -564,9 +564,9 @@
                   <button type="button" class="c-button-practice -min-w100 u-ml-8 js-btn-s3" disabled>登録</button>
                 </div>
                 <div class="p-practice__card -min-w-140">
-                  <label>
+                  <label class="c-label-checkbox">
                     <input class="js-check-s3" type="checkbox" />
-                    チェック
+                    <span>チェック</span>
                   </label>
                   <p class="js-checkResult-s3">未承認です。</p>
                 </div>
@@ -645,7 +645,7 @@
                     <span class="js-quiz-incorrect--41 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は「無効」です。<br />
-                      isActiveはfalseのためif文の条件が偽となり、else節が実行されます。
+                      is-activeはfalseのためif文の条件が偽となり、else文が実行されます。
                     </span>
                   </div>
                   <button data-quiz-id="q4_1" data-step-question-id="41" class="c-btn">答えを確認</button>
@@ -770,15 +770,16 @@
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S4-1</span>
                 <p class="u-flex-1">
-                  '.js-area-s4'をクリックしたとき、押したボタンが'.js-loginBtn-s4'であれば'.js-loginBtn-s4'にdisabledを付与し<br />
-                  '.js-logoutBtn-s4'のdisabledを外す。そうでなければ逆にする。
+                  '.js-area-s4'にクリックイベントを設定する。<br />
+                  クリックした要素が'.js-loginBtn-s4'であれば'.js-loginBtn-s4'にdisabledを付与し、'.js-logoutBtn-s4'のdisabledを外す。<br />
+                  クリックした要素が'.js-loginBtn-s4'でなければ'.js-logoutBtn-s4'にdisabledを付与し、'.js-loginBtn-s4'のdisabledを外す。
                 </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S4-2</span>
                 <p class="u-flex-1">
                   '.js-statusBtn-s4'をクリックしたとき、'.js-loginBtn-s4'にdisabled属性が付いている場合は'.js-statusText-s4'に"会員"と表示する。<br />
-                  '.js-logoutBtn-s4'にdisabled属性が付いている場合は"ゲスト"と表示する。
+                  '.js-logoutBtn-s4'にdisabled属性が付与されている場合は"ゲスト"と表示する。
                 </p>
               </div>
             </div>
@@ -891,7 +892,7 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 血液型で分岐するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: 血液型が値と等しいかどうかを判定するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
                     if (type === "A型") {<br />
                     &nbsp;&nbsp;console.log("A");<br />
@@ -972,10 +973,7 @@
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S5-2</span>
-                <p class="u-flex-1">
-                  '.js-size-s5'で選択されている値が"Sサイズ"なら '.js-option-s5'に"在庫わずか"と表示、<br />
-                  "Mサイズ"なら"人気商品"、"Lサイズ"なら"送料無料対象"と表示する。
-                </p>
+                <p class="u-flex-1">'.js-size-s5'で選択されている値が"Sサイズ"なら '.js-option-s5'に"在庫わずか"と表示、"Mサイズ"なら"人気商品"、"Lサイズ"なら"送料無料対象"と表示する。</p>
               </div>
             </div>
           </div>
@@ -1044,7 +1042,7 @@
                     }
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" />表示なし</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" />undefined</label>
                     <label class="p-choice__item"><input type="radio" name="q6_2" value="b" />null</label>
                     <label class="p-choice__item"><input type="radio" name="q6_2" value="c" />true</label>
                     <label class="p-choice__item"><input type="radio" name="q6_2" value="d" />要素なし</label>
@@ -1353,15 +1351,21 @@
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S7-1</span>
                 <p class="u-flex-1">
-                  '.js-select-s7'の値が変わったとき、switch文を使って"home"なら'.js-display-s7'に"ホーム"、"about"なら"アバウト"、"contact"なら"お問い合わせ"と表示する。それ以外は空にする。
+                  .js-select-s7の選択値が変更されたとき、valueの値に応じて、switch文を使って選択値に応じたテキストを.js-display-s7に表示する。<br />
+                  "home"の場合："ホーム"<br />
+                  "about"の場合："アバウト"<br />
+                  "contact"の場合："お問い合わせ"<br />
+                  上記以外の場合：空文字
                 </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L4-S7-2</span>
                 <p class="u-flex-1">
-                  '.js-tabArea-s7'内の'.js-tabBtn-s7'をクリックしたとき、switch文を使って<br />
-                  data-page属性の値が"home"なら'.js-tabResult-s7'に"ホーム"、"about"なら"アバウト"、<br />
-                  "contact"なら"お問い合わせ"、それ以外なら"不明"を表示する。
+                  .js-tabArea-s7内の.js-tabBtn-s7をクリックしたとき、クリックしたボタンのdata-page属性の値に応じて、switch文を使って.js-tabResult-s7にテキストを表示する。<br />
+                  "home"の場合："ホーム"<br />
+                  "about"の場合："アバウト"<br />
+                  "contactの場合"："お問い合わせ"<br />
+                  上記以外の場合："不明"
                 </p>
               </div>
             </div>
@@ -1434,7 +1438,7 @@
                     <span class="js-quiz-incorrect--82 u-color-warning u-hide">
                       ✕ 不正解。<br />
                       正解は「なし」です。<br />
-                      空文字""はfalsyなので条件が偽となり、:の後の"なし"が返ります。
+                      空文字""はfalseとして扱われ、条件が偽となり、:の後の"なし"が返ります。
                     </span>
                   </div>
                   <button data-quiz-id="q8_2" data-step-question-id="82" class="c-btn">答えを確認</button>
@@ -1677,6 +1681,5 @@
     <script src="../common/assets/js/config.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/curriculum.js" defer></script>
-    <script src="assets/js/sample.js" defer></script>
   </body>
 </html>

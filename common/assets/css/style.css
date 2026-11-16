@@ -73,6 +73,16 @@ JavaScript Curriculum Common StyleCSS
   border: 0;
 }
 
+.c-label-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.c-label-checkbox span {
+  cursor: pointer;
+}
+
 .c-copy.is-show {
   opacity: 1;
   transform: translateX(0);
